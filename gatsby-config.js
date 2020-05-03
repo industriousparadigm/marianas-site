@@ -1,90 +1,39 @@
 module.exports = {
   siteMetadata: {
-    title: `22Boxes Template Uno`,
+    title: `Mariana Miragaia`,
     author: {
-      name: `Gagandeep Singh`,
-      summary: `22boxes.com`,
+      name: `Diogo Costa`,
+      summary: `A somewhat good developer`,
     },
-    description: `22Boxes Gatsby template Uno`,
-    siteUrl: `https://22boxesgatsbyuno.netlify.com/`,
-    social: {
-      twitter: `twentytwoboxes`,
-    },
+    description: `Displaying work done by Mariana throughout the years`,
+    siteUrl: `https://marianamiragaia.com/`,
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/work`,
-        name: `work`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
-            },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-        ],
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
-    `gatsby-plugin-feed`,
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `22Boxes Gatsby Uno`,
-        short_name: `22Boxes.com`,
+        name: `Mariana Miragaia`,
+        short_name: `Mariana`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `salmon`,
         display: `minimal-ui`,
-        icon: `content/assets/uno-favicon.png`,
+        icon: `src/images/tree-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
+    `gatsby-plugin-styled-components`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    // To learn more, visit: https://gatsby.app/offline
+    // 'gatsby-plugin-offline',
   ],
 }
