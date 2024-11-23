@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import SocialIcons from '@/app/components/SocialIcons'
 import styles from './Header.module.css'
 
 export default function Header() {
@@ -30,11 +31,7 @@ export default function Header() {
                 </nav>
 
                 {/* Social Media Icons */}
-                <div className={styles.socialIcons}>
-                    <a href="#">YT</a>
-                    <a href="#">TW</a>
-                    <a href="#">IG</a>
-                </div>
+                <SocialIcons />
             </div>
         </header>
     )

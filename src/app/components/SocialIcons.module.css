@@ -1,0 +1,22 @@
+/* Container for social icons */
+.socialIcons {
+    display: flex;
+    gap: 15px;
+    /* Spacing between icons */
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Icon styles */
+.icon {
+    font-size: 1.5rem;
+    /* Adjust size of icons */
+    color: white;
+    /* Default color */
+    transition: color 0.3s;
+}
+
+.icon:hover {
+    color: red;
+    /* Highlight on hover */
+}
