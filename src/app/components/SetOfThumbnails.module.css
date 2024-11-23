@@ -1,0 +1,66 @@
+/* Grid for thumbnails */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Thumbnail container */
+.thumbnail {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  /* Subtle animation on hover */
+}
+
+/* Image inside the thumbnail */
+.thumbnailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensure the image fully fills the box */
+  border-radius: 8px;
+  /* Keep the rounded corners */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Slight zoom on image hover */
+.thumbnail:hover .thumbnailImage {
+  transform: scale(1.1);
+  /* Zoom the image itself */
+  filter: brightness(0.7);
+  /* Dim the image slightly */
+}
+
+/* Hover overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent overlay */
+  transition: opacity 0.3s ease;
+}
+
+/* Show overlay on hover */
+.thumbnail:hover .overlay {
+  opacity: 1;
+}
+
+/* Text on overlay */
+.title {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 10px;
+}

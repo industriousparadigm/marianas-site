@@ -1,0 +1,60 @@
+/* The header spans the full width of the viewport */
+.header {
+    width: 100%;
+    background: transparent;
+    box-sizing: border-box;
+    padding: 0 20px;
+    /* Horizontal padding for small screens */
+}
+
+/* Content is constrained to a max width and centered */
+.headerContent {
+    max-width: 1000px;
+    /* Matches the layout container width */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo styles */
+.logo {
+    font-size: 1.5rem;
+}
+
+/* Navigation links */
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    transition: color 0.3s;
+}
+
+.nav a.active {
+    color: red;
+}
+
+.nav a:hover {
+    color: red;
+}
+
+/* Social media icons */
+.socialIcons {
+    display: flex;
+    gap: 10px;
+}
+
+.socialIcons a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.socialIcons a:hover {
+    color: lightgray;
+}
