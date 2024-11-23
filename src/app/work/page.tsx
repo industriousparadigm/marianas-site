@@ -7,15 +7,20 @@ import { thumbnails } from '../mockdata'
 
 export default function WorkPage() {
     const searchParams = useSearchParams()
-    const [currentVideo, setCurrentVideo] = useState<string>('')
+    const [currentVideoId, setCurrentVideoId] = useState<string>(thumbnails[0].videoId)
 
     useEffect(() => {
-        const initialVideoUrl = searchParams.get('videoUrl') || thumbnails[0].videoUrl
-        setCurrentVideo(initialVideoUrl)
+        const videoIdFromParams = searchParams.get('videoId')
+        if (videoIdFromParams) {
+            setCurrentVideoId(videoIdFromParams)
+        } else {
+            setCurrentVideoId(thumbnails[0].videoId) // Fallback to the first video
+        }
     }, [searchParams])
 
-    const handleThumbnailClick = (videoUrl: string) => {
-        setCurrentVideo(videoUrl)
+    const handleThumbnailClick = (videoId: string) => {
+        setCurrentVideoId(videoId)
+        window.history.pushState(null, '', `/work?videoId=${encodeURIComponent(videoId)}`)
     }
 
     return (
@@ -23,7 +28,7 @@ export default function WorkPage() {
             {/* Big Video Viewer */}
             <div className={styles.videoViewer}>
                 <iframe
-                    src={currentVideo}
+                    src={`https://www.youtube.com/embed/${currentVideoId}`}
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -32,14 +37,10 @@ export default function WorkPage() {
                 />
             </div>
 
-            {/* Thumbnail Carousel */}
-            <div className={styles.carousel}>
+            {/* Stacked Thumbnails */}
+            <div className={styles.stackedThumbnails}>
                 {thumbnails.map((thumbnail, idx) => (
-                    <div
-                        key={idx}
-                        className={styles.thumbnail}
-                        onClick={() => handleThumbnailClick(thumbnail.videoUrl)}
-                    >
+                    <div key={idx} className={styles.thumbnail} onClick={() => handleThumbnailClick(thumbnail.videoId)}>
                         <img src={thumbnail.src} alt={thumbnail.alt} className={styles.thumbnailImage} />
                         <div className={styles.thumbnailOverlay}>
                             <p>{thumbnail.title}</p>

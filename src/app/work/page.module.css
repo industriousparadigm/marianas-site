@@ -11,7 +11,7 @@
 /* Video Viewer */
 .videoViewer {
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     aspect-ratio: 16 / 9;
     margin: 0 auto;
     border-radius: 8px;
@@ -25,23 +25,21 @@
     border: none;
 }
 
-/* Thumbnail Carousel */
-.carousel {
-    display: flex;
+/* Stacked Thumbnails Layout */
+.stackedThumbnails {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 15px;
-    overflow-x: auto;
-    padding: 10px 0;
     width: 100%;
     max-width: 1000px;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
+/* Individual Thumbnail */
 .thumbnail {
-    flex: 0 0 auto;
-    width: 150px;
-    height: 84px;
     position: relative;
+    aspect-ratio: 16 / 9;
+    /* Force 16:9 aspect ratio */
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
@@ -50,7 +48,7 @@
 }
 
 .thumbnail:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -58,6 +56,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Center-crop the image */
+    object-position: center;
 }
 
 .thumbnailOverlay {
@@ -84,14 +84,22 @@
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .carousel {
-        flex-wrap: wrap;
-        justify-content: center;
+    .videoViewer {
+        width: 90%;
+        aspect-ratio: 16 / 9;
+        /* Maintain 16:9 ratio */
+    }
+
+    .stackedThumbnails {
+        gap: 10px;
     }
 
     .thumbnail {
-        width: 120px;
-        height: 68px;
+        border-radius: 6px;
+    }
+
+    .thumbnailImage {
+        border-radius: 6px;
     }
 }
 
@@ -99,6 +107,7 @@
     .videoViewer {
         width: 100%;
         aspect-ratio: 4 / 3;
+        /* Adjust ratio for small screens */
     }
 
     .thumbnail {

@@ -3,6 +3,7 @@ import { Bebas_Neue, Roboto } from 'next/font/google'
 import './globals.css'
 import Header from '@/app/components/Header'
 import styles from './layout.module.css'
+import SocialIcons from './components/SocialIcons'
 
 export const metadata: Metadata = {
     title: 'Mariana Costa',
@@ -40,11 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <main style={{ flex: 1 }}>{children}</main>
                     <footer className={styles.footer}>
                         <p>© {new Date().getFullYear()} by Mariana Costa</p>
-                        <div>
-                            <a href="#">YT</a>
-                            <a href="#">TW</a>
-                            <a href="#">IG</a>
-                        </div>
+                        <SocialIcons />
                     </footer>
                 </div>
             </body>

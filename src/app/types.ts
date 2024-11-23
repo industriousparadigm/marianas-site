@@ -3,6 +3,6 @@ export interface VideoPreviewThumbnail {
     description: string
     src: string
     alt: string
-    videoUrl: string
+    videoId: string
   }
   

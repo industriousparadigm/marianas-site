@@ -20,7 +20,7 @@ export default function SetOfThumbnails({ thumbnails }: SetOfThumbnailsProps) {
 
 function Thumbnail({ image }: { image: VideoPreviewThumbnail }) {
     return (
-        <Link href={`/work?videoUrl=${encodeURIComponent(image.videoUrl)}`} className={styles.thumbnail}>
+        <Link href={`/work?videoId=${encodeURIComponent(image.videoId)}`} className={styles.thumbnail}>
             <img src={image.src} alt={image.alt} className={styles.thumbnailImage} />
             <div className={styles.overlay}>
                 <p className={styles.title}>{image.title}</p>
