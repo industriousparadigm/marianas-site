@@ -1,11 +1,11 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import styles from './page.module.css'
 import { thumbnails } from '../mockdata'
 
-export default function WorkPage() {
+function VideoPageContent() {
     const searchParams = useSearchParams()
     const [currentVideoId, setCurrentVideoId] = useState<string>(thumbnails[0].videoId)
 
@@ -49,5 +49,13 @@ export default function WorkPage() {
                 ))}
             </div>
         </div>
+    )
+}
+
+export default function WorkPage() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <VideoPageContent />
+        </Suspense>
     )
 }

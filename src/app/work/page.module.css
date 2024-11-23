@@ -6,6 +6,7 @@
     padding: 20px;
     gap: 20px;
     box-sizing: border-box;
+    width: 100%;
 }
 
 /* Video Viewer */
@@ -25,30 +26,28 @@
     border: none;
 }
 
-/* Stacked Thumbnails Layout */
+/* Stacked Thumbnails Grid */
 .stackedThumbnails {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(5, 1fr);
     gap: 15px;
     width: 100%;
     max-width: 1000px;
-    box-sizing: border-box;
 }
 
-/* Individual Thumbnail */
+/* Thumbnail */
 .thumbnail {
     position: relative;
-    aspect-ratio: 16 / 9;
-    /* Force 16:9 aspect ratio */
-    border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
+    border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    aspect-ratio: 16 / 9;
 }
 
 .thumbnail:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -56,8 +55,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Center-crop the image */
-    object-position: center;
 }
 
 .thumbnailOverlay {
@@ -83,35 +80,30 @@
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
-    .videoViewer {
-        width: 90%;
-        aspect-ratio: 16 / 9;
-        /* Maintain 16:9 ratio */
-    }
-
+@media (max-width: 1024px) {
     .stackedThumbnails {
-        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .stackedThumbnails {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .thumbnail {
-        border-radius: 6px;
-    }
-
-    .thumbnailImage {
-        border-radius: 6px;
+    .videoViewer {
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
     }
 }
 
 @media (max-width: 480px) {
-    .videoViewer {
-        width: 100%;
-        aspect-ratio: 4 / 3;
-        /* Adjust ratio for small screens */
+    .stackedThumbnails {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .thumbnail {
-        width: 100px;
-        height: 56px;
+    .videoViewer {
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
     }
 }
