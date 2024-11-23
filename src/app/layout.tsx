@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Raleway, Work_Sans } from 'next/font/google'
+import { Bebas_Neue, Roboto } from 'next/font/google'
 import './globals.css'
 import Header from '@/app/components/Header'
 import styles from './layout.module.css'
@@ -9,22 +9,22 @@ export const metadata: Metadata = {
     description: "Samples of Mariana's work"
 }
 
-// Fonts
-const raleway = Raleway({
-    weight: ['400', '700'],
+// Import fonts
+const bebasNeue = Bebas_Neue({
+    weight: '400', // Bebas Neue only has one weight
     subsets: ['latin'],
     display: 'swap'
 })
 
-const workSans = Work_Sans({
-    weight: ['300', '400', '500'],
+const roboto = Roboto({
+    weight: ['100', '300', '400'], // Light weights for general text
     subsets: ['latin'],
     display: 'swap'
 })
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en" className={`${raleway.className} ${workSans.className}`}>
+        <html lang="en" className={`${bebasNeue.className} ${roboto.className}`}>
             <body>
                 {/* Background video */}
                 <video autoPlay loop muted className={styles.backgroundVideo}>

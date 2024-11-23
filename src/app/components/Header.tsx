@@ -9,27 +9,32 @@ export default function Header() {
 
     return (
         <header className={styles.header}>
-            <div className={styles.logo}>[ Mariana Costa ]</div>
+            <div className={styles.headerContainer}>
+                {/* Logo */}
+                <div className={styles.logo}>[ Mariana Costa ]</div>
 
-            <nav className={styles.nav}>
-                <Link href="/" className={pathname === '/' ? styles.active : ''}>
-                    Home
-                </Link>
-                <Link href="/work" className={pathname === '/work' ? styles.active : ''}>
-                    Work
-                </Link>
-                <Link href="/biography" className={pathname === '/biography' ? styles.active : ''}>
-                    Biography
-                </Link>
-                <Link href="/contact" className={pathname === '/contact' ? styles.active : ''}>
-                    Contact
-                </Link>
-            </nav>
+                {/* Navigation */}
+                <nav className={styles.nav}>
+                    <Link href="/" className={pathname === '/' ? styles.active : ''}>
+                        Home
+                    </Link>
+                    <Link href="/work" className={pathname === '/work' ? styles.active : ''}>
+                        Work
+                    </Link>
+                    <Link href="/biography" className={pathname === '/biography' ? styles.active : ''}>
+                        Biography
+                    </Link>
+                    <Link href="/contact" className={pathname === '/contact' ? styles.active : ''}>
+                        Contact
+                    </Link>
+                </nav>
 
-            <div className={styles.socialIcons}>
-                <a href="#">YT</a>
-                <a href="#">TW</a>
-                <a href="#">IG</a>
+                {/* Social Media Icons */}
+                <div className={styles.socialIcons}>
+                    <a href="#">YT</a>
+                    <a href="#">TW</a>
+                    <a href="#">IG</a>
+                </div>
             </div>
         </header>
     )

@@ -1,37 +1,51 @@
 /* Header container */
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    /* Spacing between rows */
-    padding: 20px 10px;
-    background: transparent;
     width: 100%;
+    background: transparent;
+    padding: 20px 0;
     box-sizing: border-box;
+}
+
+/* Inner container to align with content */
+.headerContainer {
+    max-width: 1000px;
+    padding: 0 20px;
+    /* Match content width */
+    margin: 0 auto;
+    /* Center the header content */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    /* Wrap content on smaller screens */
 }
 
 /* Logo */
 .logo {
     font-size: 1.8rem;
-    text-align: center;
+    text-align: left;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+    flex: 1;
+    /* Ensure logo aligns left */
 }
 
 /* Navigation bar */
 .nav {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    /* Wrap links if needed on small screens */
     gap: 15px;
+    flex: 2;
+    /* Center navigation in the middle */
 }
 
 .nav a {
     color: white;
     text-decoration: none;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
     transition: color 0.3s;
 }
 
@@ -47,12 +61,15 @@
 .socialIcons {
     display: flex;
     gap: 15px;
-    justify-content: center;
+    justify-content: flex-end;
+    flex: 1;
+    /* Ensure icons align right */
 }
 
 .socialIcons a {
     color: white;
     text-decoration: none;
+    font-size: 1rem;
     transition: color 0.3s;
 }
 
@@ -62,22 +79,22 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .header {
-        padding: 15px 20px;
-        /* Smaller padding for mobile */
+    .headerContainer {
+        flex-direction: column;
+        align-items: center;
     }
 
     .logo {
-        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 10px;
     }
 
     .nav {
-        gap: 10px;
-        /* Reduce gap between links */
+        justify-content: center;
+        margin-bottom: 10px;
     }
 
     .socialIcons {
-        gap: 10px;
-        /* Reduce gap for social icons */
+        justify-content: center;
     }
 }

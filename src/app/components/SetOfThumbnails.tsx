@@ -2,6 +2,7 @@
 
 import { VideoPreviewThumbnail } from '../types'
 import styles from './SetOfThumbnails.module.css'
+import Link from 'next/link'
 
 type SetOfThumbnailsProps = {
     thumbnails: VideoPreviewThumbnail[]
@@ -19,13 +20,11 @@ export default function SetOfThumbnails({ thumbnails }: SetOfThumbnailsProps) {
 
 function Thumbnail({ image }: { image: VideoPreviewThumbnail }) {
     return (
-        <div className={styles.thumbnail}>
-            {/* Image */}
+        <Link href={`/work?videoUrl=${encodeURIComponent(image.videoUrl)}`} className={styles.thumbnail}>
             <img src={image.src} alt={image.alt} className={styles.thumbnailImage} />
-            {/* Hover overlay */}
             <div className={styles.overlay}>
                 <p className={styles.title}>{image.title}</p>
             </div>
-        </div>
+        </Link>
     )
 }

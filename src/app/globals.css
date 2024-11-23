@@ -7,14 +7,18 @@
   padding: 0;
 }
 
-/* Set base font styles */
+/* Root font styles */
 :root {
-  --foreground: #ffffff; /* White text color */
-  --accent: #ff4040; /* Red for accents like links and active states */
+  --foreground: #ffffff;
+  /* White text color */
+  --accent: #ff4040;
+  /* Red for accents like links and active states */
 }
 
-html, body {
-  font-family: 'Work Sans', Arial, sans-serif;
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  /* Elegant, thin font for body text */
   color: var(--foreground);
   background-color: var(--background);
   line-height: 1.6;
@@ -23,16 +27,23 @@ html, body {
   margin: 0;
   display: flex;
   flex-direction: column;
-
 }
 
-/* Headings with Raleway */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Bebas Neue', sans-serif;
+  /* Compressed, bold font for headings */
+  font-weight: 400;
   color: var(--foreground);
   margin: 0 0 10px;
   line-height: 1.2;
+  text-transform: uppercase;
+  /* Optional, for extra elegance */
 }
 
 /* Links and navigation */
@@ -46,14 +57,16 @@ a:hover {
   color: var(--accent);
 }
 
-/* Active navigation link */
 nav a.active {
-  color: var(--accent); /* Highlight active link */
+  color: var(--accent);
+  /* Highlight active link */
 }
 
-/* Body text */
-p, li {
-  font-family: 'Work Sans', Arial, sans-serif;
+/* General body text */
+p,
+li {
+  font-family: 'Roboto', Arial, sans-serif;
+  /* Thin, elegant font */
   font-weight: 300;
   margin: 0 0 10px;
 }
