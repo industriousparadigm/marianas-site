@@ -2,21 +2,27 @@
 .socialIcons {
     display: flex;
     gap: 15px;
-    /* Spacing between icons */
     justify-content: flex-end;
     align-items: center;
+    flex: none; /* Prevent resizing */
+    width: 220px; /* Fixed width for larger screens */
 }
 
 /* Icon styles */
 .icon {
-    font-size: 1.5rem;
-    /* Adjust size of icons */
-    color: white;
-    /* Default color */
+    font-size: 1.5rem; /* Adjust size of icons */
+    color: white; /* Default color */
     transition: color 0.3s;
 }
 
 .icon:hover {
-    color: red;
-    /* Highlight on hover */
+    color: red; /* Highlight on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .socialIcons {
+        width: auto; /* Remove fixed width on smaller screens */
+        justify-content: center; /* Center icons on smaller screens */
+    }
 }

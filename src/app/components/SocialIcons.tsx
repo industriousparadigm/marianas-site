@@ -1,20 +1,18 @@
-'use client'
-
-import { FaYoutube, FaLinkedin } from 'react-icons/fa'
+import { FaLinkedin } from 'react-icons/fa'
 import styles from './SocialIcons.module.css'
 
 export default function SocialIcons() {
     return (
         <div className={styles.socialIcons}>
             {/* YouTube Icon */}
-            <a
+            {/* <a
                 href="https://www.youtube.com/@halffullfilmworks4300"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
             >
                 <FaYoutube className={styles.icon} />
-            </a>
+            </a> */}
 
             {/* LinkedIn Icon */}
             <a

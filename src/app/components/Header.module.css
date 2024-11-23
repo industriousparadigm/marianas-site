@@ -10,15 +10,10 @@
 .headerContainer {
     max-width: 1000px;
     padding: 0 20px;
-    /* Match content width */
     margin: 0 auto;
-    /* Center the header content */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-    /* Wrap content on smaller screens */
 }
 
 /* Logo */
@@ -27,8 +22,8 @@
     text-align: left;
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 2px;
-    flex: 1;
-    /* Ensure logo aligns left */
+    flex: none; /* Allow fixed width */
+    width: 220px; /* Fixed width on larger screens */
 }
 
 /* Navigation bar */
@@ -36,8 +31,7 @@
     display: flex;
     justify-content: center;
     gap: 15px;
-    flex: 2;
-    /* Center navigation in the middle */
+    flex: 1; /* Take the remaining space */
 }
 
 .nav a {
@@ -57,26 +51,6 @@
     color: red;
 }
 
-/* Social media icons */
-.socialIcons {
-    display: flex;
-    gap: 15px;
-    justify-content: flex-end;
-    flex: 1;
-    /* Ensure icons align right */
-}
-
-.socialIcons a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s;
-}
-
-.socialIcons a:hover {
-    color: lightgray;
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .headerContainer {
@@ -86,6 +60,7 @@
 
     .logo {
         text-align: center;
+        width: auto; /* Remove fixed width on smaller screens */
         margin-bottom: 10px;
     }
 
@@ -96,5 +71,6 @@
 
     .socialIcons {
         justify-content: center;
+        width: auto; /* Remove fixed width on smaller screens */
     }
 }

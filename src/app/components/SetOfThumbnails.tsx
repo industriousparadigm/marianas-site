@@ -1,5 +1,3 @@
-'use client'
-
 import { VideoPreviewThumbnail } from '../types'
 import styles from './SetOfThumbnails.module.css'
 import Link from 'next/link'

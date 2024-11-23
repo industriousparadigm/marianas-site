@@ -9,6 +9,16 @@
     width: 100%;
 }
 
+/* Video Title */
+.videoTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 0 32px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+}
+
 /* Video Viewer */
 .videoViewer {
     width: 100%;

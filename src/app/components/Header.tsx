@@ -12,7 +12,9 @@ export default function Header() {
         <header className={styles.header}>
             <div className={styles.headerContainer}>
                 {/* Logo */}
-                <div className={styles.logo}>[ Mariana Costa ]</div>
+                <Link href="/">
+                    <div className={styles.logo}>[ Mariana Costa ]</div>
+                </Link>
 
                 {/* Navigation */}
                 <nav className={styles.nav}>
@@ -25,9 +27,9 @@ export default function Header() {
                     <Link href="/biography" className={pathname === '/biography' ? styles.active : ''}>
                         Biography
                     </Link>
-                    <Link href="/contact" className={pathname === '/contact' ? styles.active : ''}>
+                    {/* <Link href="/contact" className={pathname === '/contact' ? styles.active : ''}>
                         Contact
-                    </Link>
+                    </Link> */}
                 </nav>
 
                 {/* Social Media Icons */}
