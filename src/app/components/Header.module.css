@@ -1,37 +1,37 @@
-/* The header spans the full width of the viewport */
+/* Header container */
 .header {
-    width: 100%;
-    background: transparent;
-    box-sizing: border-box;
-    padding: 0 20px;
-    /* Horizontal padding for small screens */
-}
-
-/* Content is constrained to a max width and centered */
-.headerContent {
-    max-width: 1000px;
-    /* Matches the layout container width */
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* Spacing between rows */
+    padding: 20px 10px;
+    background: transparent;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* Logo styles */
+/* Logo */
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
 }
 
-/* Navigation links */
+/* Navigation bar */
 .nav {
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Wrap links if needed on small screens */
+    gap: 15px;
 }
 
 .nav a {
     color: white;
     text-decoration: none;
     font-family: 'Oswald', sans-serif;
+    font-weight: 500;
     transition: color 0.3s;
 }
 
@@ -46,7 +46,8 @@
 /* Social media icons */
 .socialIcons {
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    justify-content: center;
 }
 
 .socialIcons a {
@@ -57,4 +58,26 @@
 
 .socialIcons a:hover {
     color: lightgray;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+        /* Smaller padding for mobile */
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav {
+        gap: 10px;
+        /* Reduce gap between links */
+    }
+
+    .socialIcons {
+        gap: 10px;
+        /* Reduce gap for social icons */
+    }
 }

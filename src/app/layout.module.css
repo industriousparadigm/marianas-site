@@ -9,18 +9,21 @@
     z-index: -1;
 }
 
-/* Layout container for content (excluding header) */
+/* Layout container */
 .container {
     flex: 1;
     display: flex;
     flex-direction: column;
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0 20px;
+    /* Add padding for breathing room */
     color: white;
     text-align: left;
+    box-sizing: border-box;
 }
 
-/* Footer styles */
+/* Footer */
 .footer {
     display: flex;
     justify-content: space-between;
@@ -42,4 +45,23 @@
 
 .footer a:hover {
     color: lightgray;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+        /* Smaller padding for mobile */
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .footer a {
+        margin-left: 0;
+        margin-top: 5px;
+    }
 }
