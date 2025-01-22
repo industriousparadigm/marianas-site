@@ -13,14 +13,13 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 /* Logo */
-.logo {
+.logoContainer {
     font-size: 1.8rem;
     text-align: left;
-    font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 2px;
     flex: none; /* Allow fixed width */
     width: 220px; /* Fixed width on larger screens */
@@ -37,18 +36,18 @@
 .nav a {
     color: white;
     text-decoration: none;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-weight: 300;
     font-size: 1rem;
     transition: color 0.3s;
 }
 
 .nav a.active {
-    color: red;
+    color: var(--accent);
 }
 
 .nav a:hover {
-    color: red;
+    color: var(--accent);
 }
 
 /* Responsive adjustments */
@@ -58,7 +57,7 @@
         align-items: center;
     }
 
-    .logo {
+    .logoContainer {
         text-align: center;
         width: auto; /* Remove fixed width on smaller screens */
         margin-bottom: 10px;

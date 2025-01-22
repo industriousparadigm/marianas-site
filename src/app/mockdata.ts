@@ -1,4 +1,6 @@
-export const thumbnails = [
+import { VideoPreviewThumbnail } from './types'
+
+export const thumbnails: VideoPreviewThumbnail[] = [
   {
     title: 'Capacity Building',
     description: 'Empowering local communities through scalable solutions.',

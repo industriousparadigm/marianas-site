@@ -9,18 +9,20 @@
 
 /* Root font styles */
 :root {
+  --background: #ADD8E6;
   --foreground: #ffffff;
   /* White text color */
-  --accent: #ff4040;
+  --accent: #FF69B4;
+  --subaccent: #FFA500;
   /* Red for accents like links and active states */
 }
 
 html,
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Nunito', sans-serif;
   /* Elegant, thin font for body text */
   color: var(--foreground);
-  background-color: var(--background);
+  /* background-color: var(--background); */
   line-height: 1.6;
   overflow-x: hidden;
   height: 100%;
@@ -36,14 +38,21 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Poppins', sans-serif;
   /* Compressed, bold font for headings */
-  font-weight: 400;
-  color: var(--foreground);
+  font-weight: bold;
   margin: 0 0 10px;
   line-height: 1.2;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   /* Optional, for extra elegance */
+}
+
+h1 {
+  color: var(--accent);
+}
+
+h2,h3 {
+  color: var(--subaccent);
 }
 
 /* Links and navigation */
